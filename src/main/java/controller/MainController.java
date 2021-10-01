@@ -40,7 +40,7 @@ public class MainController {
                 try {
                     if (command.canProcess(entry)) {
                         entry.validateParameters(command.command());
-                        command.canProcess(entry);
+                        command.process(entry);
                         break;
                     }
                 } catch (Exception e) {

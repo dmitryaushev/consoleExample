@@ -27,9 +27,4 @@ public class CreateDeveloper implements Command{
         service.create(developer);
         view.write(String.format("Developer created with name - %s", developer.getName()));
     }
-
-    @Override
-    public boolean canProcess(InputString userInput) {
-        return false;
-    }
 }
