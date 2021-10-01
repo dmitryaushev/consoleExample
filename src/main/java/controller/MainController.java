@@ -1,6 +1,8 @@
 package controller;
 
 import exception.ExitException;
+import repository.DeveloperRepositoryImpl;
+import service.DeveloperServiceImpl;
 import util.InputString;
 import util.View;
 
@@ -15,7 +17,10 @@ public class MainController {
 
     public MainController(View view, DataSource dataSource) {
         this.view = view;
-        this.commands = Arrays.asList();
+        DeveloperServiceImpl developerService = new DeveloperServiceImpl(new DeveloperRepositoryImpl(dataSource));
+        this.commands = Arrays.asList(
+                new CreateDeveloper(view, developerService)
+        );
     }
 
     public void read() {
