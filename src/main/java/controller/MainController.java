@@ -19,7 +19,8 @@ public class MainController {
         this.view = view;
         DeveloperServiceImpl developerService = new DeveloperServiceImpl(new DeveloperRepositoryImpl(dataSource));
         this.commands = Arrays.asList(
-                new CreateDeveloper(view, developerService)
+                new CreateDeveloper(view, developerService),
+                new Exit(view)
         );
     }
 
